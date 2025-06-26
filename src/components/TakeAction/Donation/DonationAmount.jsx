@@ -1,7 +1,7 @@
 import React from "react";
 import DonationForm from "./DonationForm";
 
-const DonationAMount = () => {
+const DonationAmount = () => {
   return (
     <section className="w-full py-20 mb-16">
       <div className="md:max-w-7xl mx-auto flex md:flex-row flex-col gap-20 ">
@@ -31,4 +31,4 @@ const DonationAMount = () => {
   );
 };
 
-export default DonationAMount;
+export default DonationAmount;
