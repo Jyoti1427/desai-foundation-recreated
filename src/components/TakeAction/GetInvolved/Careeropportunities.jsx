@@ -1,6 +1,6 @@
 import React from "react";
 import img from "../../../assets/TakeAction/career-opportunities-768x512.jpg";
-import ButtonRect from "../../ui/buttonRect";
+import ButtonRect from "../../ui/ButtonRect";
 
 const Careeropportunities = () => {
   return (

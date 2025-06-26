@@ -1,5 +1,5 @@
 import React from "react";
-import ButtonRect from "../ui/buttonRect";
+import ButtonRect from "../ui/Button Rect";
 
 const TeamHero = () => {
   return (

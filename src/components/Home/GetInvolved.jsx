@@ -1,5 +1,5 @@
 import React from "react";
-import ButtonRect from "../ui/buttonRect";
+import ButtonRect from "../ui/ButtonRect";
 import Button from "../ui/Button";
 import supportImg from "../../assets/images/support-image.jpg";
 
