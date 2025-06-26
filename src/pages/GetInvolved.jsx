@@ -8,7 +8,7 @@ import Video from "../components/TakeAction/GetInvolved/Video";
 import PlatinumSponsors from "../components/TakeAction/GetInvolved/PlatinumSponsors";
 import MatchingProgram from "../components/TakeAction/GetInvolved/MatchingProgram";
 import PartnerShip from "../components/TakeAction/GetInvolved/PartnerShip";
-import ShopWithPartners from "../components/TakeAction/GetInvolved/ShopWtihPartners";
+import ShopWithPartners from "../components/TakeAction/GetInvolved/ShopWithPartners";
 import Sponsors from "../components/TakeAction/GetInvolved/Sponsors";
 
 const GetInvolved = () => {
