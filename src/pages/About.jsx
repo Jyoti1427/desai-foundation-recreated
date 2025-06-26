@@ -8,7 +8,7 @@ import SocialInvites from "../components/About/SocialInvites";
 import Goals from "../components/About/Goals";
 import AnnualReports from "../components/About/AnnualReports";
 import FinancialStatement from "../components/About/FinancialStatement";
-import OurHistory from "../components/About/OurHIstory";
+import OurHistory from "../components/About/OurHistory";
 import OurPrograms from "../components/About/OurPrograms";
 
 const About = () => {
