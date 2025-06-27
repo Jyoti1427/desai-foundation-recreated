@@ -36,7 +36,7 @@ const kindEventSponsors = [
 
 const Sponsors = () => {
   return (
-    <section className="w-full bg-gray-200">
+    <section className="w-full bg-gray-100">
       <div className="md:max-w-7xl mx-auto px-4 py-16">
         {/* event sponsors */}
         <div className="w-full h-[2px] bg-black mb-12"></div>

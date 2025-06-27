@@ -13,14 +13,11 @@ const Goals = () => {
       <h1 className="text-[28px] font-extrabold text-center py-10 uppercase">
         UN Sustainable Development Goals
       </h1>
-      <div className="flex md:flex-row flex-col justify-evenly items-center gap-6 mb-12">
-        <img src={Img1} className="h-[10rem]" />
-        <img src={Img2} className="h-[10rem]" />
-        <img src={Img3} className="h-[10rem]" />
-        <img src={Img4} className="h-[10rem]" />
-        <img src={Img5} className="h-[10rem]" />
-        <img src={Img6} className="h-[10rem]" />
-        <img src={Img7} className="h-[10rem]" />
+
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-7 gap-6 place-items-center px-4 mb-12">
+        {[Img1, Img2, Img3, Img4, Img5, Img6, Img7].map((img, idx) => (
+          <img key={idx} src={img} alt={`Goal ${idx + 1}`} className="h-[10rem]" />
+        ))}
       </div>
     </div>
   );

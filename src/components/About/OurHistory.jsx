@@ -4,13 +4,13 @@ import HistoryImg from "../../assets/about/10-million-oic-1-768x768.jpg";
 const OurHistory = () => {
   return (
     <section className="py-20">
-      <h1 className="text-primary text-[22px] font-extrabold text-center ">
+      <h1 className="text-primary text-[22px] font-extrabold text-center">
         Our History
       </h1>
       <h2 className="text-[28px] text-center font-extrabold mb-10">
         A timeline: 1997 – Present
       </h2>
-      <div className="md:max-w-4xl md:h-[30rem] mx-auto px-8 flex md:flex-row flex-col justify-cenetr items-center gap-12 rounded-2xl border border-gray-100 shadow-2xl ring-1 ring-gray-300">
+      <div className="md:max-w-4xl md:h-[30rem] mx-auto py-6 px-8 flex md:flex-row flex-col justify-cenetr items-center gap-12 rounded-2xl border border-gray-100 shadow-2xl ring-1 ring-gray-300">
         <img src={HistoryImg} className="w-[23rem]" />
         <div>
           <h3 className="text-[22px] mb-8 text-primary text-left">

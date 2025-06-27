@@ -41,13 +41,13 @@ const sponsors = [
 
 const PlatinumSponsors = () => {
   return (
-    <div className="md:max-w-7xl mx-auto flex md:flex-row flex-col gap-12 py-20">
+    <div className="md:max-w-7xl mx-auto flex md:flex-row flex-col gap-8 px-6 py-20">
       {/* left platinum sponsors*/}
       <div>
         <h2 className="text-[26px] font-bold mb-8 text-primary ">
           Platinum Sponsors
         </h2>
-        <ul className="list-disc list-inside space-y-2 mx-auto font-bold">
+        <ul className="list-disc space-y-2 px-3 font-bold">
           {sponsors.map((sponsor, index) => (
             <li key={index}>{sponsor}</li>
           ))}
@@ -64,7 +64,7 @@ const PlatinumSponsors = () => {
               <img
                 src={img}
                 alt={`grid-${idx}`}
-                className="px-16 object-cover"
+                className="px-16 md:w-full  w-2/3 object-cover"
               />
             </div>
           ))}

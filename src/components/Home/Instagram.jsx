@@ -27,11 +27,11 @@ const Instagram = () => {
         </div>
 
         {/* Right Grid Section */}
-        <div className="md:w-1/2 w-full grid grid-cols-3 gap-7">
+        <div className="md:w-1/2 w-full h-full  grid md:grid-cols-3 gap-7">
           {InstagramImages.map((img, idx) => (
             <div
               key={idx}
-              className="relative h-48 w-full overflow-hidden group"
+              className="relative h-48 sm:h-[40rem] md:h-48 w-full overflow-hidden group"
             >
               <img
                 src={img}

@@ -8,11 +8,14 @@ export default {
     extend: {
        colors: {
         primary: "#cf316e",
+        secondary: "#68143d",
         "top-banner":"#d643b6",     
         "brand-pink": "#C71585", 
-        "desai-maroon": "#3B0A16"
+        "desai-maroon": "#3B0A16",
+
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/aspect-ratio')],
+
 }
 }

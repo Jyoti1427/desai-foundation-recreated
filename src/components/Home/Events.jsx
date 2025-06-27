@@ -5,9 +5,9 @@ import event1 from "../../assets/images/Lotus-Logo-Purple21-scaled.jpg";
 
 const Events = () => {
   return (
-    <section>
+    <section className="max-w-7xl mx-auto px-4">
       {/* left content */}
-      <div className="max-w-7xl mx-auto px-4 py-24 flex md:flex-row flex-col justify-center items-center gap-10">
+      <div className="py-24 flex md:flex-row flex-col justify-center items-center gap-6">
         <div className="w-1/2">
           <div className="flex justify-start items-center">
             <div className="h-[1px] w-20 mb-6 mr-3 bg-blue-700"></div>
@@ -34,7 +34,7 @@ const Events = () => {
         </div>
 
         {/* right cards */}
-        <div className="flex md:flex-row flex-col justify-center items-center gap-10">
+        <div className="flex md:flex-row flex-col justify-center items-center gap-8">
           {/* card 1 */}
           <div className="w-[20rem] h-[16rem] rounded-2xl border border-primary">
             <img

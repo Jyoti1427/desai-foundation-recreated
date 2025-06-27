@@ -64,7 +64,7 @@ const cardData = [
 
 const CheckOutNews = () => {
   return (
-    <section className="w-full  py-20 bg-gray-200">
+    <section className="w-full px-4 py-20 bg-gray-100">
       <div className="md:max-w-[85rem] mx-auto ">
         {/* top content */}
         <div>

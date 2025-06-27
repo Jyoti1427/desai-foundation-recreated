@@ -22,7 +22,7 @@ const cardData = [
 
 const Celebrate = () => {
   return (
-    <section className="w-full py-16">
+    <section className="w-full px-4 py-16">
       <div className="md:max-w-[85rem] mx-auto flex flex-col lg:flex-row justify-between gap-12">
         {/* Left Section */}
         <div className="w-full lg:w-[60%] flex flex-col justify-between">
@@ -33,7 +33,7 @@ const Celebrate = () => {
             <h1 className="text-left mb-5 font-bold text-[28px] uppercase">
               upcoming events and gatherings
             </h1>
-            <p className="text-left text-medium">
+            <p className="text-left font-medium">
               Be part of the impact by attending one of our signature events.
               Celebrate at Diwali on the Hudson in NYC, enjoy the elegance of
               our annual Lotus Festival Gala in Boston, join the festivities at
@@ -50,14 +50,14 @@ const Celebrate = () => {
               {cardData.map((card, idx) => (
                 <div
                   key={idx}
-                  className="w-[23.5rem] h-[16rem] rounded-xl border border-primary overflow-hidden shadow-md"
+                  className="w-full md:w-[23.5rem] h-[16rem] rounded-xl border border-primary overflow-hidden shadow-md"
                 >
                   <img
                     src={card.image}
                     alt={card.imgAlt}
                     className="w-full h-[8rem] object-cover"
                   />
-                  <div className="p-2  h-[8rem] flex flex-col justify-between">
+                  <div className="p-2 h-[8rem] flex flex-col justify-between">
                     <h3 className="font-bold text-[18px] uppercase mt-4">
                       {card.title}
                     </h3>
@@ -88,12 +88,13 @@ const Celebrate = () => {
 
             <div className="flex flex-col gap-10">
               {/* Past Event 1 */}
-              <div className="flex items-center gap-8">
+              <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-8 w-full">
                 <img
                   src={img2}
-                  className="w-[13rem] h-[8rem] object-cover rounded-2xl border border-primary transition-transform duration-500 hover:scale-110"
+                  className="w-full md:w-[13rem] h-[8rem] object-cover rounded-2xl border border-primary transition-transform duration-500 hover:scale-110"
+                  alt="Diwali on the Hudson"
                 />
-                <div>
+                <div className="w-full text-left mt-2 md:mt-0">
                   <strong>Diwali on the Hudson 2024</strong>
                   <br />
                   <br />
@@ -107,12 +108,13 @@ const Celebrate = () => {
               </div>
 
               {/* Past Event 2 */}
-              <div className="flex items-center gap-8">
+              <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-8 w-full">
                 <img
                   src={img4}
-                  className="w-[13rem] h-[7rem] object-cover rounded-2xl border border-primary transition-transform duration-500 hover:scale-110"
+                  className="w-full md:w-[13rem] h-[7rem] object-cover rounded-2xl border border-primary transition-transform duration-500 hover:scale-110"
+                  alt="Lotus Festival"
                 />
-                <div>
+                <div className="w-full text-left mt-2 md:mt-0">
                   <strong>Lotus Festival 2024</strong>
                   <br />
                   <br />
@@ -126,12 +128,13 @@ const Celebrate = () => {
               </div>
 
               {/* Past Event 3 */}
-              <div className="flex items-center gap-8">
+              <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-8 w-full">
                 <img
                   src={img3}
-                  className="w-[13rem] h-[8rem] object-cover rounded-2xl border border-primary transition-transform duration-500 hover:scale-110"
+                  className="w-full md:w-[13rem] h-[8rem] object-cover rounded-2xl border border-primary transition-transform duration-500 hover:scale-110"
+                  alt="Holi in Miami"
                 />
-                <div>
+                <div className="w-full text-left mt-2 md:mt-0">
                   <strong>Holi in Miami</strong>
                   <br />
                   <br />

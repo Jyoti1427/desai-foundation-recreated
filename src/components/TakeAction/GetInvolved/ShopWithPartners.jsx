@@ -10,7 +10,7 @@ const imageList = [img1, img2, img3, img4, img5, img6];
 
 const ShopWithPartners = () => {
   return (
-    <section className="w-full bg-gray-200 py-20">
+    <section className="w-full bg-gray-100 py-20">
       <div className="md:max-w-6xl mx-auto px-4 ">
         {/* top text */}
         <div>
@@ -39,7 +39,7 @@ const ShopWithPartners = () => {
               key={idx}
               src={img}
               alt={`partner-${idx + 1}`}
-              className="h-40 object-cover rounded-full shadow-md border border-primary"
+              className="md:h-40 object-cover rounded-full shadow-md border border-primary"
             />
           ))}
         </div>

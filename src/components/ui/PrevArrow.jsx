@@ -1,13 +1,14 @@
-import React from 'react';
-import { MdOutlineKeyboardArrowLeft } from "react-icons/md";
+import { FaChevronLeft } from "react-icons/fa";
 
-const PrevArrow = ({ onClick }) => (
-  <div
-    onClick={onClick}
-    className="absolute rounded-full -left-16 top-1/2 transform -translate-y-1/2 z-10 p-2 cursor-pointer text-white  bg-primary hover:text-primary hover:scale-105 hover:bg-white hover:border hover:border-primary"
-  >
-    <MdOutlineKeyboardArrowLeft size={32} />
-  </div>
-);
+const PrevArrow = ({ onClick }) => {
+  return (
+    <div
+      className="absolute top-1/2 -translate-y-1/2 left-2 sm:left-1 md:left-[-1.7rem] z-10 bg-primary p-2 rounded-full "
+      onClick={onClick}
+    >
+      <FaChevronLeft className="text-2xl text-white transition" />
+    </div>
+  );
+};
 
-export default PrevArrow
+export default PrevArrow;

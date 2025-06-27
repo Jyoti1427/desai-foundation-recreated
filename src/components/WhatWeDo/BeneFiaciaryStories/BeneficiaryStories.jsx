@@ -3,13 +3,13 @@ import BeneficiaryStoriesSlide from "../../Home/BeneficiaryStories";
 
 const BeneficiaryStories = () => {
   return (
-    <div className="flex flex-col justify-center items-center py-20">
-      <h1 className="text-[55px] font-bold mb-12 text-center uppercase">
+    <div className="flex flex-col justify-center items-center bg-gray-100 py-20">
+      <h1 className="md:text-[53px] text-[35px] font-bold mb-12 text-center uppercase">
         Beneficiary Stories
       </h1>
-      <div>
+      <div className="w-full max-w-7xl px-4 aspect-video">
         <iframe
-          className="h-[38rem] w-[84rem]"
+         className="w-full h-full"
           src="https://www.youtube.com/embed/m2xAPOSAHNY?si=PM-xV3NL9sf9dgWT"
           title="YouTube video player"
           frameborder="0"
@@ -18,7 +18,7 @@ const BeneficiaryStories = () => {
           allowfullscreen
         ></iframe>
       </div>
-      <div className="py-12">
+      <div className="md:w-full w-3/4 py-12">
         <BeneficiaryStoriesSlide />
       </div>
     </div>

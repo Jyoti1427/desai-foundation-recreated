@@ -47,7 +47,7 @@ const Grants = () => {
   return (
     <section className="w-full py-16 bg-gray-100">
       <div className="md:max-w-[65rem] mx-auto px-2">
-        <h1 className="text-3xl font-bold text-center mb-6 uppercase">
+        <h1 className="md:text-3xl text-2xl font-bold text-center mb-6 uppercase">
           Grants Awarded to the Desai Foundation
         </h1>
         <p className="text-center font-medium mb-8">

@@ -42,24 +42,27 @@ const Impact = () => {
 
   return (
     <section className="md:h-[64rem] py-16">
-      <div className="md:max-w-7xl mx-auto px-6">
+      <div className="md:max-w-7xl mx-auto px-4">
         <h2 className="text-[28px] font-bold text-center mb-4 text-primary">
           Our Impact
         </h2>
         <h2 className="text-[24px] font-extrabold text-center mb-8 uppercase">
           creating lasting impact
         </h2>
-        <div className="sm:px-6">
-          <Slider {...settings}>
-            {impactData.map((item, index) => (
-              <ImpactCard
-                key={index}
-                icon={item.icon}
-                count={item.count}
-                title={item.title}
-              />
-            ))}
-          </Slider>
+        <div className="flex justify-center">
+          <div className="w-full max-w-full sm:max-w-2xl md:max-w-7xl">
+            <Slider {...settings}>
+              {impactData.map((item, index) => (
+                <div key={index} className="md:px-0 md:!block !flex justify-center gap-2 px-2">
+                  <ImpactCard
+                    icon={item.icon}
+                    count={item.count}
+                    title={item.title}
+                  />
+                </div>
+              ))}
+            </Slider>
+          </div>
         </div>
       </div>
     </section>

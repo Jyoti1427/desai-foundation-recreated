@@ -2,7 +2,7 @@ import React from "react";
 
 const Video = () => {
   return (
-    <section className="w-full py-20 bg-gray-200">
+    <section className="w-full py-20 bg-gray-100">
       <div className="md:max-w-5xl mx-auto px-4">
         <h1 className="text-[26px] font-bold text-center mb-8">
           Thank You to Our Incredible Donors!

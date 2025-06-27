@@ -5,19 +5,19 @@ const TeamHero = () => {
   return (
     <section>
       <div className="w-full py-12">
-        <div className="md:max-w-6xl px-12 my-12 flex md:flex-row flex-col mx-auto justify-center items-center gap-16">
+        <div className="md:max-w-6xl px-12 my-12 flex md:flex-row flex-col mx-auto justify-center items-center md:gap-16 gap-6">
           {/* left mission */}
-          <div className="w-1/2 mt-6 ">
-            <h1 className="text-primary font-extrabold text-[28px] mb-6">
+          <div className="md:w-1/2 w-full ">
+            <h1 className="text-primary font-extrabold text-[28px] mb-3">
               Our Team
             </h1>
-            <h3 className="font-bold text-[28px] mb-6 uppercase">
+            <h3 className="font-bold text-[28px] uppercase">
               Leadership Council
             </h3>
           </div>
           {/* right para */}
-          <div className="w-1/2">
-            <p className="text-left">
+          <div className="md:w-1/2 w-full">
+            <p className="md:text-left text-justify">
               <strong>
                 Meet our dynamic team, spanning across the United States and
                 India. United by a shared passion to make a genuine impact on
@@ -28,9 +28,9 @@ const TeamHero = () => {
             </p>
           </div>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-5 md:w-4/5 mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-5 md:w-4/5 mx-auto px-4">
           <a href="#our-team" className="block w-full">
-            <ButtonRect className="w-full text-lg font-bold text-white bg-primary hover:bg-white hover:text-blue-600 hover:border hover:border-blue-600 uppercase">
+            <ButtonRect className="w-full text-lg font-bold text-white bg-primary hover:bg-white hover:text-blue-600 hover:border hover:border-blue-600 uppercase transition-colors duration-300">
               our team
             </ButtonRect>
           </a>

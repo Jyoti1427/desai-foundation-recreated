@@ -62,12 +62,15 @@ const navItems = [
   { label: "India Site", path: "https://thedesaifoundation.org" },
 ];
 
+const handleCloseDrawer = () => setIsDrawerOpen(false);
+
+
 const Navbar = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   return (
     <nav className="bg-white shadow-md w-full z-50 border-b-2 border-gray-800 relative">
-      <div className="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between">
+      <div className="md:max-w-7xl mx-auto px-4 py-2 flex items-center justify-between">
         <div>
           <img src={logo} alt="Logo" className="h-24 md:h-20" />
         </div>
@@ -100,7 +103,7 @@ const Navbar = () => {
             transition={{ duration: 0.3 }}
             className="absolute top-full left-0 w-full bg-pink-600 z-40  max-h-fit overflow-y-auto shadow-md"
           >
-            <MobileMenu navItems={navItems} />
+            <MobileMenu navItems={navItems} onClose={() => setIsDrawerOpen(false)} />
           </motion.div>
         )}
       </AnimatePresence>

@@ -3,7 +3,7 @@ import { MdArrowDropDown } from "react-icons/md";
 import MobileSubMenu from "./MobileSubMenu";
 import { Link } from "react-router-dom";
 
-const MobileMenu = ({ navItems }) => {
+const MobileMenu = ({ navItems, onClose }) => {
   const [openDropdowns, setOpenDropdowns] = useState({});
 
   const toggleDropdown = (index) => {
@@ -17,7 +17,8 @@ const MobileMenu = ({ navItems }) => {
     <ul className="text-white bg-primary border border-black/60 rounded-xl overflow-hidden">
       {navItems.map((item, idx) => {
         const hasChildren = !!item.children;
-        const path = item.path || `/${item.label.toLowerCase().replace(/\s+/g, "-")}`;
+        const path =
+          item.path || `/${item.label.toLowerCase().replace(/\s+/g, "-")}`;
 
         return (
           <li
@@ -32,17 +33,26 @@ const MobileMenu = ({ navItems }) => {
                 >
                   <span>{item.label}</span>
                   <MdArrowDropDown
-                    className={`ml-2 transition-transform duration-200 ${openDropdowns[idx] ? "rotate-180" : ""}`}
+                    className={`ml-2 transition-transform duration-200 ${
+                      openDropdowns[idx] ? "rotate-180" : ""
+                    }`}
                   />
                 </button>
               ) : (
-                <Link to={path} className="block w-full font-extrabold">
+                <Link
+                  to={path}
+                   onClick={() => {
+                    if (onClose) onClose();
+                     }}
+                  className="block w-full font-extrabold"
+                  
+                >
                   {item.label}
                 </Link>
               )}
             </div>
             {hasChildren && openDropdowns[idx] && (
-              <MobileSubMenu items={item.children} />
+              <MobileSubMenu items={item.children} onClose={onClose} />
             )}
           </li>
         );

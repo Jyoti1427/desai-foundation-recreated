@@ -9,12 +9,12 @@ import img6 from "../../../assets/TakeAction/Resource-Guide-Thumbnail-300x153.jp
 import img7 from "../../../assets/TakeAction/volunteer-300x152.jpg";
 import img8 from "../../../assets/TakeAction/HRC_Visit_DF_HFH_Gandhinagar-486-1-1-768x432.jpg";
 
-
 const cardData = [
   {
     image: img1,
     title: "Host a Cocktails & Chat",
-    description: "Host a fun gathering with friends and family to raise funds while enjoying good company and great food. Get in touch to learn more!",
+    description:
+      "Host a fun gathering with friends and family to raise funds while enjoying good company and great food. Get in touch to learn more!",
   },
   {
     image: img2,
@@ -49,21 +49,44 @@ const cardData = [
   {
     image: img8,
     title: "COVID-19 Relief",
-    description: "Distribute PPE kits, sanitizers, and awareness material.",
+    description:
+      "Distribute PPE kits, sanitizers, and awareness material.",
   },
 ];
 
 const GetInvolved = () => {
   return (
-    <section className="w-full py-16">
-      <div className="md:max-w:7xl">
+    <section className="w-full py-16 px-4">
+      <div className="md:max-w-7xl mx-auto">
         <h2 className="text-[28px] text-primary font-extrabold text-center uppercase mb-3">
           Get Involved
         </h2>
-        <p className="font-bold text-center">
+        <p className="font-bold text-center mb-10">
           Supporting the Desai Foundation is easy and impactful. Here’s how you
           can make a difference!
         </p>
+
+        {/* Cards Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+          {cardData.map((card, idx) => (
+            <div
+              key={idx}
+              className="bg-white rounded-xl shadow-md border border-primary overflow-hidden flex flex-col"
+            >
+              <img
+                src={card.image}
+                alt={card.title}
+                className="h-[10rem] w-full object-cover"
+              />
+              <div className="p-4 flex flex-col gap-2">
+                <h3 className="font-bold text-lg text-primary">
+                  {card.title}
+                </h3>
+                <p className="text-sm text-gray-700">{card.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

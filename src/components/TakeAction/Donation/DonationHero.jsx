@@ -3,13 +3,15 @@ import heroImage from "../../../assets/TakeAction/donationHero.png";
 
 const DonationHero = () => {
   return (
-    <section className="relative w-full mb-12 h-auto mt-0 pt-0">
-      <img
-        src={heroImage}
-        alt="Hero Background"
-        className="w-full object-cover"
-      />
-    </section>
+   <section className="relative w-full mb-12 h-[40vh] md:h-[70vh]">
+             {/* Background image */}
+             <img
+               src={heroImage}
+               alt="Hero Background"
+               className="w-full h-full object-cover"
+             />
+          
+        </section>
   );
 };
 

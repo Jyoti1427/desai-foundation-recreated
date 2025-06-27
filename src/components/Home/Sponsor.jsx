@@ -16,7 +16,7 @@ const Sponsor = () => {
         </div>
 
         {/* Text Section */}
-        <div className="md:w-1/3 md:px-4">
+        <div className="md:w-1/3 px-4">
           <h1 className="text-2xl text-center font-extrabold mb-3 uppercase">
             Sponsor a Hero
           </h1>
@@ -24,7 +24,7 @@ const Sponsor = () => {
             Strengthen the Communityoes
           </h2>
 
-          <p className="font-semibold text-center">
+          <p className="font-semibold text-center px-2">
             Heroes for Humanity are community health workers and local leaders
             trained to deliver the Desai Foundation’s programs directly in their
             own villages. From menstrual health and hygiene to anemia and

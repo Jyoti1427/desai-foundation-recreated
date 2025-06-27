@@ -15,7 +15,7 @@ const staes = [
 
 const RegionalMap = () => {
   return (
-    <section className="md:max-w-7xl py-20 mx-auto">
+    <section className="md:max-w-7xl py-20 px-6 mx-auto">
       <div className="flex md:flex-row flex-col gap-12 justify-center items-center">
         {/* left map */}
         <img src={IndiaMap} className="h-full" />

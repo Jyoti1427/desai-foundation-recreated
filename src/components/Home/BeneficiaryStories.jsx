@@ -51,7 +51,7 @@ const BeneficiaryStories = () => {
             <div key={index} className="px-4">
               <div className="relative flex flex-col md:flex-row justify-between items-center gap-6 rounded-2xl bg-pink-950 mb-6 p-6 h-[30rem] md:h-[18rem]">
                 {/* Quote Icon */}
-                <FaQuoteRight className="absolute top-4 right-4 text-pink-700 text-3xl" />
+                <FaQuoteRight className="absolute top-0 right-8 text-pink-700 text-[3rem]" />
                 {/* img */}
                 <div className="flex-shrink-0 w-44 h-44 rounded-full border-4 border-white overflow-hidden">
                   <img src={item.Img} className=" h-full w-full object-cover" />

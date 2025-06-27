@@ -4,14 +4,14 @@ import missionImg2 from "../../assets/images/smilingWomen.jpg";
 
 const OurMission = () => {
   return (
-    <section className="relative md:h-[64rem] h-[48rem]  py-10 mb-16">
+    <section className="relative md:h-[64rem] h-[48rem] py-12 mb-16">
       {/* top section */}
       <div className="flex md:flex-row flex-col h-[41rem] w-full my-12">
         {/* left mission */}
-        <div className="md:h-full  h-[90rem] w-full bg-pink-900">
+        <div className="md:h-full h-[35rem] w-full py-6 bg-pink-900">
           <div className="md:w-1/2 mx-auto px-12 mt-8 md:mt-20">
-            <div>
-              <h2 className="md:text-5xl text-[32px] text-white font-bold uppercase mb-3">
+            <div className="">
+              <h2 className="md:text-5xl sm:text-4xl text-[32px] text-white font-bold uppercase mb-3">
                 Our Mission
               </h2>
               <p className="md:text-[28px] text-[20px] text-white font-bold">
@@ -22,11 +22,11 @@ const OurMission = () => {
           </div>
         </div>
         {/* right mission circle */}
-        <div className="md:h-full  h-[8rem] w-full  bg-gray-200">
+        <div className="md:h-full w-full h-[6rem]  bg-gray-400">
           <img
             src={missionImg}
             alt="Mission Image"
-            className="w-1/2 -mt-[31rem] ml-[10rem] md:mt-16"
+            className="w-1/2 -mt-[21rem] ml-[10rem] md:mt-16"
           />
         </div>
       </div>

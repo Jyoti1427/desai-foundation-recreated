@@ -6,7 +6,6 @@ import supportImg from "../../assets/images/support-image.jpg";
 const GetInvolved = () => {
   return (
     <section className="w-full my-16">
-  
       <div>
         <h1 className="text-2xl text-center font-bold text-primary mb-3">
           Get Involved
@@ -15,26 +14,25 @@ const GetInvolved = () => {
           How to support
         </h2>
       </div>
-      <div className="flex justify-center gap-2">
-        <ButtonRect className="uppercase">
+      <div className="flex md:flex-row flex-col justify-center gap-2">
+        <ButtonRect className="hover:text-white uppercase">
           Donate to deasi foundation
         </ButtonRect>
-        <ButtonRect className="uppercase">Sponsor a program</ButtonRect>
-        <ButtonRect className="uppercase">
+        <ButtonRect className="hover:text-white uppercase">Sponsor a program</ButtonRect>
+        <ButtonRect className="hover:text-white uppercase">
           Host an event, build a campaign
         </ButtonRect>
-        <ButtonRect className="uppercase">corporate partnership</ButtonRect>
-        <ButtonRect className="uppercase">volunteer opportunities</ButtonRect>
+        <ButtonRect className="hover:text-white uppercase">corporate partnership</ButtonRect>
+        <ButtonRect className="hover:text-white uppercase">volunteer opportunities</ButtonRect>
       </div>
-
 
       <div className="md:max-w-[90rem] mx-auto px-12 flex md:flex-row flex-col justify-center md:items-center gap-28 items-start mt-20">
         {/* image */}
         <div className="">
-          <div className="w-[27rem] h-[26rem] rounded-full border-2 border-blue-500">
+          <div className="md:w-[26rem] md:h-[26rem] w-[16rem] h-[16rem] rounded-full border-2 border-blue-500">
             <img
               src={supportImg}
-              className="h-[26rem] w-[26rem] rounded-full"
+              className="md:h-[25rem] md:w-[25rem] w-[15rem] h-[15rem] rounded-full"
             />
           </div>
         </div>
@@ -76,7 +74,6 @@ const GetInvolved = () => {
           </Button>
         </div>
       </div>
-  
     </section>
   );
 };

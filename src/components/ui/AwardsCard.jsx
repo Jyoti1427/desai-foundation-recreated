@@ -4,7 +4,7 @@ const AwardsCard = ({ image, title, onClick }) => {
   return (
     <div className="border-b-2 border-primary p-3 rounded-md shadow-sm bg-white hover:shadow-md transition duration-300">
       {/* Image */}
-      <div className="w-full h-48 overflow-hidden rounded-md mb-4">
+      <div className="w-full md:h-48 overflow-hidden rounded-md mb-4 ">
         <img
           src={image}
           alt={title}
