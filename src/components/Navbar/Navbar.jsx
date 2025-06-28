@@ -1,7 +1,5 @@
-// Navbar.jsx
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { HashLink } from "react-router-hash-link";
 import { IoMenu } from "react-icons/io5";
 import { RxCross2 } from "react-icons/rx";
 import { motion, AnimatePresence } from "framer-motion";
@@ -32,10 +30,7 @@ const navItems = [
         subItems: [
           { label: "Health", path: "/what-we-do/our-work#health" },
           { label: "Livelihood", path: "/what-we-do/our-work#livelihood" },
-          {
-            label: "Menstrual Equity",
-            path: "/what-we-do/our-work#menstrual-equity",
-          },
+          { label: "Menstrual Equity", path: "/what-we-do/our-work#menstrual-equity" },
           { label: "Climate", path: "/what-we-do/our-work#climate" },
         ],
       },
@@ -67,13 +62,12 @@ const navItems = [
   { label: "India Site", path: "https://thedesaifoundation.org" },
 ];
 
-const handleCloseDrawer = () => setIsDrawerOpen(false);
 
 const Navbar = () => {
+  const [showSearch, setShowSearch] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-  const [isDark, setIsDark] = useState(
-    localStorage.getItem("theme") === "dark"
-  );
+  const [isDark, setIsDark] = useState(localStorage.getItem("theme") === "dark");
 
   useEffect(() => {
     if (isDark) {
@@ -86,49 +80,85 @@ const Navbar = () => {
   }, [isDark]);
 
   return (
-    <nav className="bg-white shadow-md w-full z-50 border-b-2 border-gray-800 relative">
+    <nav className="bg-white dark:bg-gray-900 shadow-md w-full z-50 border-b-2 border-gray-800 relative">
       <div className="md:max-w-7xl mx-auto px-4 py-2 flex items-center justify-between">
-        <div>
-          <Link
-            to="/"
-            onClick={() => {
-              if (location.pathname === "/") {
-                window.scrollTo({ top: 0, behavior: "smooth" });
-              }
-            }}
-          >
-            <img src={logo} alt="Logo" className="h-10 w-auto cursor-pointer" />
-          </Link>
-        </div>
+        {/* Logo (Always Visible) */}
+        <Link
+          to="/"
+          onClick={() => {
+            if (location.pathname === "/") {
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }
+          }}
+        >
+          <img src={logo} alt="Logo" className="h-10 w-auto cursor-pointer" />
+        </Link>
 
-        {/* Desktop Menu */}
+        {/* Desktop Navigation */}
         <div className="hidden md:flex space-x-6">
           <DesktopMenu navItems={navItems} />
         </div>
 
-        <button className="btn-primary mt-3 py-3 hidden font-extrabold md:inline-block">
-          DONATE NOW
-        </button>
+        {/* Right Side Controls */}
+        <div className="flex items-center space-x-2 md:space-x-4">
+          {/* Desktop Donate Button */}
+          <button className="btn-primary mt-3 py-3 hidden font-extrabold md:inline-block">
+            DONATE NOW
+          </button>
 
-        <button
-          onClick={() => setIsDark(!isDark)}
-          className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition"
-        >
-          {isDark ? (
-            <MdSunny className="w-8 h-8 p-[.3rem]  text-yellow-400" />
-          ) : (
-            <BsMoonStars className="w-[1.8rem] h-[1.8rem] p-[.25rem] rounded-full bg-gray-200 text-black" />
-          )}
-        </button>
+          {/* Search Button */}
+          <button
+            onClick={() => setShowSearch((prev) => !prev)}
+            className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition"
+          >
+            <BiSearch className="w-6 h-6 text-gray-700 dark:text-white" />
+          </button>
 
-        {/* Mobile Menu Button */}
-        <button
-          className="md:hidden text-2xl p-3 bg-pink-600 text-white rounded-full"
-          onClick={() => setIsDrawerOpen(!isDrawerOpen)}
-        >
-          {isDrawerOpen ? <RxCross2 /> : <IoMenu />}
-        </button>
+          {/* Dark Mode Toggle */}
+          <button
+            onClick={() => setIsDark(!isDark)}
+            className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition"
+          >
+            {isDark ? (
+              <MdSunny className="w-6 h-6 text-yellow-400" />
+            ) : (
+              <BsMoonStars className="w-6 h-6 text-black dark:text-white" />
+            )}
+          </button>
+
+          {/* Mobile Drawer Toggle */}
+          <button
+            className="md:hidden text-2xl p-2 bg-pink-600 text-white rounded-full"
+            onClick={() => setIsDrawerOpen((prev) => !prev)}
+          >
+            {isDrawerOpen ? <RxCross2 /> : <IoMenu />}
+          </button>
+        </div>
       </div>
+
+      {/* Animated Search Input (Popup Style) */}
+      <AnimatePresence>
+        {showSearch && (
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.3 }}
+            className="absolute top-full w-full bg-white dark:bg-gray-900 shadow-md z-40 px-4 py-3 border-t border-gray-300 dark:border-gray-700"
+          >
+            <div className="md:max-w-7xl mx-auto">
+              <input
+                type="text"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                placeholder="Search..."
+                autoFocus
+                className="w-full py-2 px-4 border rounded-full focus:outline-none focus:ring-2 dark:bg-gray-800 dark:text-white"
+              />
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* Mobile Drawer */}
       <AnimatePresence>
@@ -138,12 +168,9 @@ const Navbar = () => {
             animate={{ y: 0 }}
             exit={{ y: "-100%" }}
             transition={{ duration: 0.3 }}
-            className="absolute top-full left-0 w-full bg-pink-600 z-40  max-h-fit overflow-y-auto shadow-md"
+            className="absolute top-full left-0 w-full bg-pink-600 z-[60] max-h-fit overflow-y-auto shadow-md"
           >
-            <MobileMenu
-              navItems={navItems}
-              onClose={() => setIsDrawerOpen(false)}
-            />
+            <MobileMenu navItems={navItems} onClose={() => setIsDrawerOpen(false)} />
           </motion.div>
         )}
       </AnimatePresence>

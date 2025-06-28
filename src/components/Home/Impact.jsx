@@ -6,6 +6,8 @@ import PrevArrow from "../../components/ui/PrevArrow";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import { motion } from "framer-motion";
+import { fadeIn, staggerContainer } from "../../utils/motion";
 
 const Impact = () => {
   const settings = {
@@ -41,19 +43,39 @@ const Impact = () => {
   };
 
   return (
-    <section className="md:h-[64rem] py-16">
+    <motion.section
+      variants={staggerContainer}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.3 }}
+      className="md:h-[64rem] py-16"
+    >
       <div className="md:max-w-7xl mx-auto px-4">
-        <h2 className="text-[28px] font-bold text-center mb-4 text-primary">
+        <motion.h2
+          variants={fadeIn("down", 0.1)}
+          className="text-[28px] font-bold text-center mb-4 text-primary"
+        >
           Our Impact
-        </h2>
-        <h2 className="text-[24px] font-extrabold text-center mb-8 uppercase">
-          creating lasting impact
-        </h2>
-        <div className="flex justify-center">
+        </motion.h2>
+
+        <motion.h2
+          variants={fadeIn("up", 0.2)}
+          className="text-[24px] font-extrabold text-center mb-8 uppercase"
+        >
+          Creating lasting impact
+        </motion.h2>
+
+        <motion.div
+          variants={fadeIn("up", 0.3)}
+          className="flex justify-center"
+        >
           <div className="w-full max-w-full sm:max-w-2xl md:max-w-7xl">
             <Slider {...settings}>
               {impactData.map((item, index) => (
-                <div key={index} className="md:px-0 md:!block !flex justify-center gap-2 px-2">
+                <div
+                  key={index}
+                  className="md:px-0 md:!block !flex justify-center gap-2 px-2"
+                >
                   <ImpactCard
                     icon={item.icon}
                     count={item.count}
@@ -63,9 +85,9 @@ const Impact = () => {
               ))}
             </Slider>
           </div>
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

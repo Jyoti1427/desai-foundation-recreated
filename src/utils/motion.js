@@ -1,5 +1,6 @@
 // Animation variant for fading in from a direction
 export const fadeIn = (direction = "up", delay = 0) => {
+  const distance = 40;
   return {
     hidden: {
       opacity: 0,

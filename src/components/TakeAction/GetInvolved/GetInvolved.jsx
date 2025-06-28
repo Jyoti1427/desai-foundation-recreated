@@ -49,15 +49,14 @@ const cardData = [
   {
     image: img8,
     title: "COVID-19 Relief",
-    description:
-      "Distribute PPE kits, sanitizers, and awareness material.",
+    description: "Distribute PPE kits, sanitizers, and awareness material.",
   },
 ];
 
 const GetInvolved = () => {
   return (
     <section className="w-full py-16 px-4">
-      <div className="md:max-w-7xl mx-auto">
+      <div className="md:max-w-7xl w-full mx-auto">
         <h2 className="text-[28px] text-primary font-extrabold text-center uppercase mb-3">
           Get Involved
         </h2>
@@ -67,24 +66,14 @@ const GetInvolved = () => {
         </p>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-16">
           {cardData.map((card, idx) => (
-            <div
+            <DonationCard
               key={idx}
-              className="bg-white rounded-xl shadow-md border border-primary overflow-hidden flex flex-col"
-            >
-              <img
-                src={card.image}
-                alt={card.title}
-                className="h-[10rem] w-full object-cover"
-              />
-              <div className="p-4 flex flex-col gap-2">
-                <h3 className="font-bold text-lg text-primary">
-                  {card.title}
-                </h3>
-                <p className="text-sm text-gray-700">{card.description}</p>
-              </div>
-            </div>
+              image={card.image}
+              title={card.title}
+              description={card.description}
+            />
           ))}
         </div>
       </div>

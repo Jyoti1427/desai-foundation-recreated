@@ -3,15 +3,15 @@ import DonationForm from "./DonationForm";
 
 const DonationAmount = () => {
   return (
-    <section className="w-full py-20 mb-16">
-      <div className="md:max-w-7xl mx-auto flex md:flex-row flex-col gap-20 ">
+    <section className="w-full py-16 mb-16">
+      <div className="md:max-w-7xl mx-auto px-4 flex md:flex-row flex-col gap-20 ">
         {/* left text */}
-        <div className="w-1/3 mt-6">
-          <h1 className="text-primary font-extrabold text-[28px] text-wrap mb-6">
+        <div className="md:w-1/3 w-full mt-6">
+          <h1 className="text-primary font-extrabold md:text-[28px] text-[24px] text-wrap mb-6">
             Help us cultivate dignity for women and children to Dream Beyond
             their circumstances.
           </h1>
-          <p className="font-medium text-left">
+          <p className="font-medium md:text-left text-justify">
             <strong>All individual donations are 100% matched</strong>
             propelling your impact even further.
           </p>
@@ -23,8 +23,8 @@ const DonationAmount = () => {
           </p>
         </div>
         {/* right table */}
-        <div className="w-1/2">
-        <DonationForm/>
+        <div className="md:w-1/2 w-full">
+          <DonationForm />
         </div>
       </div>
     </section>

@@ -36,7 +36,7 @@ const VideoBanner = () => {
       </div>
       {/* Right Side: YouTube Video */}
       <div className="w-full md:w-1/2  px-4 py-6 md:py-20">
-        <div className="relative  aspect-video overflow-hidden ">
+        <div className="relative overflow-hidden w-full h-[300px] md:h-[340px]">
           <iframe
             className="absolute top-0 left-0 md:w-[650px] w-[600px] md:h-[340px] h-[300px] md:ml-24"
             src="https://www.youtube.com/embed/JiGzZkab6JA?si=emd52MIX5BTsbZA5"

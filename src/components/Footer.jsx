@@ -19,10 +19,10 @@ const Footer = () => {
   return (
     <footer className="bg-primary text-white">
       {/* Top Part */}
-      <div className="max-w-7xl mx-auto flex justify-center px-6 py-12">
+      <div className="max-w-[85rem] mx-auto flex justify-center px-6 py-12">
         <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-4 space-x-12 ">
           {/* Logo */}
-          <div>
+          <div className="mt-8 pb-6">
             <Link
               to="/"
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
@@ -30,10 +30,10 @@ const Footer = () => {
               <img
                 src={logo}
                 alt="Logo"
-                className="h-10 w-auto cursor-pointer"
+                className="h-21 w-auto cursor-pointer"
               />
             </Link>
-            <p className="mb-4 text-base">
+            <p className="my-4 text-base">
               <strong>
                 The Desai Foundation is an organization that empowers women and
                 children through community programming to elevate health,

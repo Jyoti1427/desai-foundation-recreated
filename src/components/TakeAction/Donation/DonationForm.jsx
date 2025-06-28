@@ -9,15 +9,15 @@ const DonationForm = () => {
   const predefinedAmounts = [100, 250, 500, 1000];
 
   return (
-    <div className="max-w-2xl mx-auto p-6 bg-white shadow-xl rounded-xl space-y-6">
+    <div className="max-w-2xl mx-auto p-4 sm:p-6 bg-white shadow-xl rounded-xl  space-y-6">
       {/* Toggle - One Time / Monthly */}
-      <div className="grid grid-cols-2 gap-1">
+      <div className="grid grid-cols-2 gap-2">
         {["one-time", "monthly"].map((type) => (
           <button
             key={type}
             onClick={() => setDonationType(type)}
-            className={`py-3 px-4 text-black text-lg font-bold rounded-xl bg-pink-200 hover:bg-gray-200 focus:bg-primary focus:text-white ${
-              donationType === type ? "bg-primary text-white" : ""
+            className={`py-3 px-4 text-sm sm:text-lg font-bold rounded-xl bg-pink-100 hover:bg-gray-200 focus:bg-primary focus:text-white ${
+              donationType === type ? "bg-primary " : ""
             }`}
           >
             {type === "one-time" ? "One Time" : "Monthly"}
@@ -26,12 +26,12 @@ const DonationForm = () => {
       </div>
 
       {/* Choose text */}
-      <p className="font-bold text-lg text-center">
+      <p className="font-bold text-base sm:text-lg text-center">
         Choose an amount to donate
       </p>
 
       {/* 2x2 Grid of Amounts */}
-      <div className="grid grid-cols-2 gap-1">
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
         {predefinedAmounts.map((amount) => (
           <button
             key={amount}
@@ -39,7 +39,7 @@ const DonationForm = () => {
               setSelectedAmount(amount);
               setCustomAmount("");
             }}
-            className={`py-4 px-4 text-black text-lg font-bold rounded-xl bg-pink-200 hover:bg-gray-200  focus:bg-primary focus:text-white ${
+            className={`py-3 px-2 text-sm sm:text-lg font-bold rounded-xl bg-pink-100 hover:bg-gray-200 focus:bg-primary focus:text-white ${
               selectedAmount === amount ? "bg-primary text-white" : ""
             }`}
           >
@@ -49,11 +49,11 @@ const DonationForm = () => {
       </div>
 
       {/* Currency and Manual Entry */}
-      <div className="flex items-center gap-1">
+      <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2">
         <select
           value={currency}
           onChange={(e) => setCurrency(e.target.value)}
-          className="px-3 py-4 mb-16  rounded-xl bg-pink-200 text-lg font-bold text-black  focus:outline-2 focus:outline-offset-2 focus:outline-black"
+          className="px-3 py-3 rounded-xl bg-pink-100 text-sm sm:text-lg font-bold text-black focus:outline-2 focus:outline-offset-2 focus:outline-black"
         >
           <option value="USD">USD</option>
           <option value="INR">INR</option>
@@ -73,18 +73,18 @@ const DonationForm = () => {
 
         <input
           type="number"
-          placeholder="Other : Enter Amount Manually"
+          placeholder="Other: Enter Amount"
           value={customAmount}
           onChange={(e) => {
             setCustomAmount(e.target.value);
             setSelectedAmount(null);
           }}
-          className="flex-1 px-4 py-4 mb-16 bg-pink-200 text-lg font-bold text-black rounded-xl placeholder-black focus:outline-2 focus:outline-offset-2 focus:outline-black"
+          className="flex-1 px-2 py-3 bg-pink-100 text-sm sm:text-lg font-bold text-black rounded-xl placeholder-black focus:outline-2 focus:outline-offset-2 focus:outline-black"
         />
       </div>
 
       {/* Continue Button */}
-      <button className="w-full py-5 mt-8 font-bold rounded-xl bg-pink-900 text-white hover:bg-pink-950 transition duration-300">
+      <button className="w-full py-4 sm:py-5 mt-4 font-bold rounded-xl bg-pink-900 text-white hover:bg-pink-950 transition duration-300 text-sm sm:text-lg">
         Continue
       </button>
     </div>
