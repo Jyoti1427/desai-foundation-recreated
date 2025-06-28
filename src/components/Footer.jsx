@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import logo from "../assets/images/TheDesaiFoundation-log0.png";
 import cert1 from "../assets/images/clientlogo1.png";
 import cert2 from "../assets/images/candid-seal-platinum-2025.svg";
@@ -22,7 +23,16 @@ const Footer = () => {
         <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-4 space-x-12 ">
           {/* Logo */}
           <div>
-            <img src={logo} alt="Desai Logo" className="h-20 mb-4" />
+            <Link
+              to="/"
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            >
+              <img
+                src={logo}
+                alt="Logo"
+                className="h-10 w-auto cursor-pointer"
+              />
+            </Link>
             <p className="mb-4 text-base">
               <strong>
                 The Desai Foundation is an organization that empowers women and
@@ -41,76 +51,75 @@ const Footer = () => {
             <p className="font-bold text-base">
               300 Tradecenter, Suite 3450 Woburn, MA 01801
             </p>
+            <p className="font-bold text-base">Phone: (781)-270-3655</p>
             <p className="font-bold text-base">
-              Phone: (781)-270-3655
-            </p>
-            <p className="font-bold text-base">
-              <a href="https://mail.google.com/">Email: info@thedesaifoundation.org</a>
+              <a href="https://mail.google.com/">
+                Email: info@thedesaifoundation.org
+              </a>
             </p>
           </div>
-      
-            {/* Quick Links */}
-            <div className="mt-20">
-              <h3 className="text-xl font-bold mb-3">Quick Links</h3>
-              <ul className="space-y-2 font-bold">
-                <li>
-                  <div className="flex justify-start items-center gap-3">
-                    <FaChevronRight className="text-white text-xl" />
-                    <a href="#" className="hover:underline">
-                      Our Programs
-                    </a>
-                  </div>
-                </li>
-                <li>
-                  <div className="flex justify-start items-center gap-3">
-                    <FaChevronRight className="text-white text-xl" />
-                    <a href="#" className="hover:underline">
-                      Events
-                    </a>
-                  </div>
-                </li>
-                <li>
-                  <div className="flex justify-start items-center gap-3">
-                    <FaChevronRight className="text-white text-xl" />
-                    <a href="#" className="hover:underline">
-                      Ways to Donate
-                    </a>
-                  </div>
-                </li>
-              </ul>
-            </div>
 
-            {/* Social Media */}
-            <div className="mt-20 ">
-              <h3 className="text-xl font-bold mb-3">Social Media</h3>
-              <ul className="space-y-2 font-bold">
-                <li className="flex items-center gap-3">
-                  <FaFacebook className="text-white text-xl" />
+          {/* Quick Links */}
+          <div className="mt-20">
+            <h3 className="text-xl font-bold mb-3">Quick Links</h3>
+            <ul className="space-y-2 font-bold">
+              <li>
+                <div className="flex justify-start items-center gap-3">
+                  <FaChevronRight className="text-white text-xl" />
                   <a href="#" className="hover:underline">
-                    Facebook
+                    Our Programs
                   </a>
-                </li>
-                <li className="flex items-center gap-3">
-                  <FaInstagram className="text-white text-xl" />
+                </div>
+              </li>
+              <li>
+                <div className="flex justify-start items-center gap-3">
+                  <FaChevronRight className="text-white text-xl" />
                   <a href="#" className="hover:underline">
-                    Instagram
+                    Events
                   </a>
-                </li>
-                <li className="flex items-center gap-3">
-                  <FaTwitter className="text-white text-xl" />
+                </div>
+              </li>
+              <li>
+                <div className="flex justify-start items-center gap-3">
+                  <FaChevronRight className="text-white text-xl" />
                   <a href="#" className="hover:underline">
-                    Twitter
+                    Ways to Donate
                   </a>
-                </li>
-                <li className="flex items-center gap-3">
-                  <FaLinkedin className="text-white text-xl" />
-                  <a href="#" className="hover:underline">
-                    LinkedIn
-                  </a>
-                </li>
-              </ul>
-            </div>
-        
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          {/* Social Media */}
+          <div className="mt-20 ">
+            <h3 className="text-xl font-bold mb-3">Social Media</h3>
+            <ul className="space-y-2 font-bold">
+              <li className="flex items-center gap-3">
+                <FaFacebook className="text-white text-xl" />
+                <a href="#" className="hover:underline">
+                  Facebook
+                </a>
+              </li>
+              <li className="flex items-center gap-3">
+                <FaInstagram className="text-white text-xl" />
+                <a href="#" className="hover:underline">
+                  Instagram
+                </a>
+              </li>
+              <li className="flex items-center gap-3">
+                <FaTwitter className="text-white text-xl" />
+                <a href="#" className="hover:underline">
+                  Twitter
+                </a>
+              </li>
+              <li className="flex items-center gap-3">
+                <FaLinkedin className="text-white text-xl" />
+                <a href="#" className="hover:underline">
+                  LinkedIn
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
       {/* Bottom Part */}

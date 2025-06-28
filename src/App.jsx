@@ -33,21 +33,23 @@ function App() {
 
         {/* what we do */}
         <Route path="/what-we-do/our-work" element={<OurWork />} />
-        <Route path="/what-we-do/beneficiary-stories" element={<BeneficiaryStories />}
+        <Route
+          path="/what-we-do/beneficiary-stories"
+          element={<BeneficiaryStories />}
         />
         <Route path="/what-we-do/regional-map" element={<RegionalMap />} />
 
-       {/* Mews & events */}
+        {/* Mews & events */}
         <Route path="/news-events" element={<NewsEvents />} />
-        
-         {/* Our Impact */}
+
+        {/* Our Impact */}
         <Route path="/our-impact/our-impact" element={<OurImpactSubMenu />} />
         <Route
           path="/our-impact/awards-recognition"
           element={<AwardsRecognition />}
         />
 
-         {/* Take Action */}
+        {/* Take Action */}
         <Route path="/take-action/donation" element={<Donation />} />
         <Route path="/take-action/get-involved" element={<GetInvolved />} />
       </Routes>
