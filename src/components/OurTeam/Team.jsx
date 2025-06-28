@@ -1,5 +1,10 @@
-import React from "react";
+import React, { useState, useRef } from "react";
+import { motion } from "framer-motion";
 import Heading from "../ui/SectionHeading";
+import Button from "../ui/Button";
+
+// Importing images...
+
 import img1 from "../../assets/Team/1.jpg";
 import img2 from "../../assets/Team/2.jpg";
 import img3 from "../../assets/Team/3.jpg";
@@ -30,7 +35,6 @@ import img27 from "../../assets/Team/27.jpg";
 import img28 from "../../assets/Team/28.jpg";
 import img29 from "../../assets/Team/29.jpg";
 import img30 from "../../assets/Team/30.jpg";
-
 
 const teamMembers = [
   { img: img1, name: "Aarti Sharma", designation: "Program Manager" },
@@ -66,17 +70,32 @@ const teamMembers = [
 ];
 
 const Team = () => {
+  const [showAll, setShowAll] = useState(false);
+  const sectionRef = useRef(null);
+
+  const visibleMembers = showAll ? teamMembers : teamMembers.slice(0, 12);
+
+  const handleToggle = () => {
+    if (showAll && sectionRef.current) {
+      sectionRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+    setShowAll(!showAll);
+  };
+
   return (
-    <section id="our-team" className="py-12 bg-white">
+    <section id="our-team" className="py-12 bg-white" ref={sectionRef}>
       <div className="max-w-7xl mx-auto px-4">
         <div className="p-4 bg-white">
-          {/* heading */}
           <Heading title="OUR TEAM" />
-          {/* members */}
+
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-6">
-            {teamMembers.map((member, idx) => (
-              <div
+            {visibleMembers.map((member, idx) => (
+              <motion.div
                 key={idx}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: idx * 0.05 }}
+                viewport={{ once: true }}
                 className="w-full h-full relative flex justify-center items-end bg-cover bg-center"
                 style={{
                   backgroundImage: `url(${member.img})`,
@@ -89,9 +108,18 @@ const Team = () => {
                   </p>
                   <p className="text-xs">{member.designation}</p>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
+
+          {/* Toggle Button */}
+          {teamMembers.length > 12 && (
+            <div className="mt-10 text-center">
+              <Button onClick={handleToggle}>
+                {showAll ? "Show Less" : "Show More"}
+              </Button>
+            </div>
+          )}
         </div>
       </div>
     </section>
